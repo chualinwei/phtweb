@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchandise - Penang Heritage Trust</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Link External Files -->
+    <link rel="stylesheet" href="index_style.css">
+    <link rel="stylesheet" href="merch_css.css">
+    <script src="index_app.js" defer></script>
+    <script src="merch_app.js" defer></script>
+</head>
+
+<body class="min-h-screen transition-all duration-500">
+    
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-maroon/30 shadow-lg transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            
+            <!-- Left: Logo -->
+            <div class="flex items-center space-x-3 flex-shrink-0">
+                <img src="/images/pht logo.jpg" 
+                    alt="PHT Malaysia Logo" 
+                    class="w-10 h-10 object-contain">
+                <span class="text-xl font-serif text-maroon font-black tracking-wide">
+                    PHT Malaysia
+                </span>
+            </div>
+
+            <!-- Center: Navigation Links - PROPERLY CENTERED -->
+            <nav class="hidden lg:flex items-center justify-center absolute left-1/2 transform -translate-x-1/2 space-x-1 text-gray-700">
+                <a href="index.html" class="nav-center-links">Home</a>
+                <a href="events.html" class="nav-center-links">Events</a>
+                <a href="programs.html" class="nav-center-links">Programs</a>
+                
+                <!-- Support Us Dropdown -->
+                <div class="relative group">
+                    <button class="nav-dropdown-button flex items-center">
+                        Support Us <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-beige-dark/30 transform group-hover:translate-y-0 translate-y-2">
+                        <a href="membership.html" class="dropdown-link">Membership</a>
+                        <a href="Volunteer.html" class="dropdown-link">Volunteer</a>
+                        <a href="donation.html" class="dropdown-link">Donate</a>
+                    </div>
+                </div>
+                
+                <a href="merch.html" class="nav-center-links active">Merchandise</a>
+                <a href="resource.html" class="nav-center-links">Resources</a>
+                <a href="AboutUs.html" class="nav-center-links">About Us</a>
+            </nav>
+
+            <!-- Right: Log In Button Only -->
+            <div class="hidden lg:flex items-center flex-shrink-0">
+                <a href="#login" class="nav-login-button">
+                    Log In
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden p-2 text-maroon flex-shrink-0">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white/98 backdrop-blur-xl text-gray-800 z-40 transition-transform duration-500 transform translate-y-full opacity-0 lg:hidden">
+            <div class="flex flex-col items-center pt-24 space-y-4 text-xl">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="events.html" class="mobile-nav-link">Events</a>
+                <a href="programs.html" class="mobile-nav-link">Programs</a>
+                <a href="membership.html" class="mobile-nav-link">Membership</a>
+                <a href="Volunteer.html" class="mobile-nav-link">Volunteer</a>
+                <a href="donation.html" class="mobile-nav-link">Donate</a>
+                <a href="merch.html" class="mobile-nav-link">Merchandise</a>
+                <a href="resource.html" class="nav-center-links">Resources</a>
+                <a href="AboutUs.html" class="mobile-nav-link">About Us</a>
+                <div class="pt-6">
+                    <a href="#login" class="mobile-login-button">
+                        Log In
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mb-20 pt-20">
+        
+        <!-- Hero Section for Merch Page -->
+        <section class="py-4 gradient-section relative overflow-hidden">
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-1/4 left-1/4 w-60 h-60 bg-maroon rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-48 h-48 bg-maroon-light rounded-full blur-2xl animate-pulse" style="animation-delay: 2s;"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-5xl font-serif text-maroon mb-6">PHT Merchandise</h1>
+                <p class="text-xl text-black leading-relaxed max-w-3xl mx-auto">
+                    Every purchase supports our mission to preserve Penang's cultural legacy.
+                </p>
+            </div>
+        </section>
+
+        <!-- Category Carousel Section -->
+        <section class="py-4 gradient-section-reverse relative overflow-hidden">
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-1/3 left-1/3 w-80 h-80 bg-maroon rounded-full blur-3xl"></div>
+                <div class="absolute bottom-1/3 right-1/3 w-64 h-64 bg-maroon-light rounded-full blur-2xl"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Category Carousel - No heading, directly below main heading -->
+                <div class="category-carousel">
+                    <div class="category-track" id="category-track">
+                        <!-- Categories will be dynamically added here -->
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button id="prev-category" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white hover:scale-110 transition-all duration-300">
+                        <i data-lucide="chevron-left" class="w-6 h-6 text-maroon"></i>
+                    </button>
+                    <button id="next-category" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white hover:scale-110 transition-all duration-300">
+                        <i data-lucide="chevron-right" class="w-6 h-6 text-maroon"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="py-20 gradient-section relative overflow-hidden">
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-10 right-10 w-60 h-60 bg-maroon rounded-full blur-2xl"></div>
+                <div class="absolute bottom-10 left-10 w-48 h-48 bg-maroon-light rounded-full blur-xl"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="text-4xl font-serif text-maroon text-center mb-4">Featured Products</h2>
+                <p class="text-black text-center mb-16 max-w-2xl mx-auto">
+                    Discover our most popular heritage items
+                </p>
+                
+                <div class="product-grid" id="product-grid">
+                    <!-- Products will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot Bubble -->
+    <div class="fixed bottom-24 right-6 z-[9999]">
+        <!-- Chatbot Container -->
+        <div id="chatbot-container" class="hidden transform transition-all duration-500 ease-out">
+            <div class="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-beige-dark/50 w-80 h-96 mb-4 overflow-hidden morph-interact flex flex-col">
+                <!-- Chatbot Header -->
+                <div class="bg-maroon text-white p-4 flex items-center justify-between rounded-t-2xl flex-shrink-0">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-sm">Heritage Assistant</h3>
+                            <p class="text-white/80 text-xs">Online • Ready to help</p>
+                        </div>
+                    </div>
+                    <button id="close-chat" class="text-white/70 hover:text-white transition duration-200">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                
+                <!-- Chat Messages - Scrollable Area -->
+                <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-beige-light/50 min-h-0">
+                    <!-- Welcome Message -->
+                    <div class="flex items-start space-x-2 mb-4">
+                        <div class="w-6 h-6 bg-maroon/20 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="bot" class="w-3 h-3 text-maroon"></i>
+                        </div>
+                        <div class="bg-white/80 backdrop-blur-sm rounded-2xl rounded-tl-none px-4 py-3 shadow-sm max-w-xs border border-beige-dark/30">
+                            <p class="text-sm text-gray-800">Hello! I'm your Heritage Assistant. How can I help you explore Penang's cultural heritage today?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Replies -->
+                <div class="px-4 pb-2 flex-shrink-0">
+                    <div class="flex flex-wrap gap-2">
+                        <button class="quick-reply text-xs bg-beige/80 text-maroon px-3 py-2 rounded-full hover:bg-beige-dark hover:text-maroon-light transition duration-200 border border-beige-dark/30" data-question="What is UNESCO heritage?">
+                            UNESCO Heritage?
+                        </button>
+                        <button class="quick-reply text-xs bg-beige/80 text-maroon px-3 py-2 rounded-full hover:bg-beige-dark hover:text-maroon-light transition duration-200 border border-beige-dark/30" data-question="Heritage tours schedule">
+                            Tour Schedule
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Chat Input -->
+                <div class="p-4 border-t border-beige-dark/30 bg-beige/30 rounded-b-2xl flex-shrink-0">
+                    <div class="flex space-x-2">
+                        <input type="text" 
+                            id="chat-input" 
+                            placeholder="Ask about heritage sites..." 
+                            class="flex-1 border border-beige-dark/50 bg-white text-gray-800 rounded-full px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-maroon/30 focus:border-maroon/40 placeholder-gray-600">
+                        <button id="send-message" class="bg-beige-dark text-maroon rounded-full w-12 h-12 flex items-center justify-center hover:bg-beige hover:text-maroon-light transition duration-200 border border-beige-dark/40 shadow-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chatbot Bubble Button -->
+        <button id="chatbot-bubble" class="w-16 h-16 bg-beige-light rounded-full shadow-2xl flex items-center justify-center hover:scale-110 hover:bg-beige transition-all duration-300 animate-bounce hover:animate-none border-2 border-maroon/30 backdrop-blur-sm">
+            <i data-lucide="message-circle" class="w-7 h-7" fill="#800020" color="#800020"></i>
+        </button>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo-group">
+                    <div class="footer-logo">
+                        <img src="/images/pht logo.jpg" alt="Penang Heritage Trust Logo">
+                        <h3>Penang Heritage Trust</h3>
+                    </div>
+                    <p>Organization offering tours of Penang's heritage buildings & street art, plus cultural workshops.</p>
+                </div>
+
+                <div class="contact-details-left">
+                    <div class="contact-group">
+                        <h4>Address</h4>
+                        <p>26, Church St, Georgetown, 10200 George Town, Penang</p>
+                    </div>
+
+                    <div class="contact-group">
+                        <h4>Phone</h4>
+                        <a href="tel:+6042642631">04-264 2631</a>
+                    </div>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/PenangHeritage/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="#828282">
+                            <path d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.tripadvisor.com/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TripAdvisor">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="#828282">
+                            <path d="M10 0C6.9 0 4.3 1.8 3.1 4.4H0v1.8h1.5C1.2 6.7 1 7.3 1 8c0 2.8 2.2 5 5 5s5-2.2 5-5c0-.7-.2-1.3-.5-1.8h1c-.3.5-.5 1.1-.5 1.8 0 2.8 2.2 5 5 5s5-2.2 5-5c0-.7-.2-1.3-.5-1.8H22V4.4h-3.1C17.7 1.8 15.1 0 12 0h-2zm-4 4.4c1.5 0 2.8.8 3.5 2-.7 1.2-2 2-3.5 2s-2.8-.8-3.5-2c.7-1.2 2-2 3.5-2zm8 0c1.5 0 2.8.8 3.5 2-.7 1.2-2 2-3.5 2s-2.8-.8-3.5-2c.7-1.2 2-2 3.5-2zM6 6.9c.6 0 1.1.5 1.1 1.1S6.6 9.1 6 9.1 4.9 8.6 4.9 8 5.4 6.9 6 6.9zm8 0c.6 0 1.1.5 1.1 1.1s-.5 1.1-1.1 1.1-1.1-.5-1.1-1.1.5-1.1 1.1-1.1z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/penangheritagetrust/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="#828282">
+                            <path d="M10 1.802c2.67 0 2.987.01 4.041.059 2.71.123 3.975 1.409 4.099 4.099.048 1.054.057 1.37.057 4.04 0 2.672-.01 2.988-.057 4.042-.124 2.687-1.387 3.975-4.1 4.099-1.053.048-1.37.058-4.04.058-2.67 0-2.987-.01-4.04-.058-2.717-.124-3.977-1.416-4.1-4.1-.048-1.053-.058-1.37-.058-4.041 0-2.67.01-2.986.058-4.04.124-2.69 1.387-3.977 4.1-4.1 1.054-.048 1.37-.058 4.04-.058zM10 0C7.284 0 6.944.012 5.877.06 2.246.227.228 2.242.06 5.877.01 6.944 0 7.284 0 10s.012 3.057.06 4.123c.167 3.632 2.182 5.65 5.817 5.817 1.067.048 1.407.06 4.123.06s3.057-.012 4.123-.06c3.629-.167 5.652-2.182 5.816-5.817.05-1.066.061-1.407.061-4.123s-.012-3.056-.06-4.122C19.773 2.245 17.755.228 14.123.06 13.057.01 12.716 0 10 0zm0 4.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.338-9.87a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Operating Hours</h4>
+                <div class="contact-group">
+                    <table class="hours-table">
+                        <tr><td>Mon - Fri</td><td>9:00 am – 5:00 pm</td></tr>
+                        <tr><td>Sat - Sun</td><td>Closed</td></tr>
+                    </table>
+                </div>
+
+                <div class="contact-group" style="margin-top: 2rem;">
+                    <h4>Location Map</h4>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=26,Church%20St,Georgetown,10200%20George%20Town,Penang&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#events">Events</a></li>
+                    <li><a href="index.html#programs">Programs</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="merch.html">Merchandise</a></li>
+                    <li><a href="index.html#support">Support Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Penang Heritage Trust. All rights reserved. | <a href="#privacy" style="color: #997e62; text-decoration: none;">Privacy Policy</a> | <a href="#terms" style="color: #997e62; text-decoration: none;">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>

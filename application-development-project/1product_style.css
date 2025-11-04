@@ -1,0 +1,218 @@
+/* 
+ * PRODUCT PAGE STYLES
+ * Additional styles for the single product page
+ */
+
+/* Product Layout Styles */
+.thumbnail-image {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.thumbnail-image img {
+    transition: all 0.3s ease;
+}
+
+.thumbnail-image.active img {
+    border-color: var(--color-maroon) !important;
+    transform: scale(1.05);
+}
+
+.thumbnail-image:hover img {
+    border-color: var(--color-maroon-light) !important;
+}
+
+.main-product-image {
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    flex: 1;
+}
+
+.main-product-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(128, 0, 32, 0.15);
+}
+
+.main-product-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    background-color: #f9f9f9;
+}
+
+/* Color Selection */
+.color-option {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #d1d5db !important;
+}
+
+.color-option.active {
+    border-color: var(--color-maroon) !important;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.2);
+}
+
+.color-option:hover:not(.active) {
+    transform: scale(1.05);
+    border-color: var(--color-maroon-light) !important;
+}
+
+/* Similar Products Grid */
+.similar-products-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.similar-product-card {
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    background: white;
+    border: 1px solid rgba(212, 200, 184, 0.3);
+}
+
+.similar-product-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(128, 0, 32, 0.15);
+}
+
+.similar-product-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: #f9f9f9;
+}
+
+.similar-product-card .p-4 {
+    padding: 1.25rem;
+}
+
+.similar-product-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.similar-product-card .text-lg {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-maroon);
+    margin-bottom: 1rem;
+}
+
+.similar-product-card button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-maroon);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.similar-product-card button:hover {
+    background-color: var(--color-maroon-light);
+    transform: translateY(-2px);
+}
+
+/* Text color overrides for black text */
+.text-black {
+    color: #000000 !important;
+}
+
+/* Remove container boxes from headings */
+h1, h2, h3, h4 {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Ensure paragraph text is black */
+p {
+    color: #000000 !important;
+}
+
+/* Breadcrumb Styles */
+nav a {
+    color: var(--color-maroon);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-maroon-light);
+}
+
+/* Product Features */
+.border-t {
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Action Buttons */
+.add-to-cart-btn, .buy-now-btn {
+    transition: all 0.3s ease !important;
+}
+
+.add-to-cart-btn:hover, .buy-now-btn:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .thumbnail-image {
+        flex-direction: row;
+    }
+    
+    .thumbnail-image img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .main-product-image img {
+        height: 350px;
+    }
+    
+    .similar-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .similar-products-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .similar-product-image {
+        height: 180px;
+    }
+    
+    .main-product-image img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 640px) {
+    .thumbnail-image img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .main-product-image img {
+        height: 250px;
+    }
+    
+    .color-option {
+        width: 36px;
+        height: 36px;
+    }
+}

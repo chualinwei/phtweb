@@ -1,0 +1,627 @@
+/* 
+ * MODERN HISTORIC STYLES - Beige & White Theme
+ * Enhanced with slower animations and flowing gradients
+ */
+
+/* Font and Color Variables */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Updated Palette: Beige, White, Maroon */
+    --color-beige-dark: #d4c8b8;             /* Warm Dark Beige */
+    --color-beige: #e8dfd0;                  /* Main Beige */
+    --color-beige-light: #f5f0e6;            /* Light Beige */
+    --color-white: #ffffff;                  /* Pure White */
+    --color-maroon: #800020;                 /* Rich Maroon */
+    --color-maroon-light: #a04050;           /* Lighter Maroon */
+    
+    /* Fonts - Modern Historic Feel */
+    --font-serif: 'Crimson Text', serif;     /* Historic feel */
+    --font-sans: 'Source Sans 3', sans-serif; /* Modern clean */
+}
+
+/* Global Body Styling */
+body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--color-beige-light) 0%, var(--color-white) 100%);
+    color: #333333;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+    background-attachment: fixed;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+
+/* Navigation Dropdown Styles */
+/* Navigation Link Styles with Beige to Brown Hover */
+.nav-center-links {
+    font-size: 0.95rem !important;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    color: #4a5568 !important;
+}
+
+.nav-center-links:hover {
+    color: #5c2c0c !important;
+    background: linear-gradient(135deg, var(--color-beige-light), var(--color-beige));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(92, 44, 12, 0.15);
+}
+
+/* Underline hover effect */
+.nav-center-links::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: linear-gradient(90deg, var(--color-beige), #5c2c0c);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-center-links:hover::after {
+    width: 80%;
+}
+
+/* Dropdown button styles */
+.nav-dropdown-button {
+    font-size: 0.95rem !important;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    color: #4a5568 !important;
+}
+
+.nav-dropdown-button:hover {
+    color: #5c2c0c !important;
+    background: linear-gradient(135deg, var(--color-beige-light), var(--color-beige));
+}
+
+/* Dropdown link styles */
+.dropdown-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: #4a5568;
+    border-bottom: 1px solid #f5f0e6;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.dropdown-link:hover {
+    color: #5c2c0c !important;
+    background: linear-gradient(135deg, var(--color-beige-light), var(--color-beige));
+    padding-left: 1.5rem;
+}
+
+.dropdown-link:last-child {
+    border-bottom: none;
+}
+
+/* Log In button styles */
+.nav-login-button {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #5c2c0c;
+    color: #5c2c0c;
+    border-radius: 2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+}
+
+.nav-login-button:hover {
+    background: linear-gradient(135deg, var(--color-beige-light), var(--color-beige));
+    color: #5c2c0c;
+    border-color: var(--color-beige);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(92, 44, 12, 0.2);
+}
+
+/* Active state */
+.nav-center-links.active {
+    color: #5c2c0c !important;
+    background: linear-gradient(135deg, var(--color-beige-light), var(--color-beige));
+}
+
+.nav-center-links.active::after {
+    width: 80%;
+}
+
+/* Mobile navigation styles */
+.mobile-nav-link {
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    color: #4a5568;
+    text-align: center;
+    width: 200px;
+}
+
+.mobile-nav-link:hover {
+    color: #5c2c0c;
+    background: linear-gradient(135deg, var(--color-beige-light), var(--color-beige));
+}
+
+.mobile-login-button {
+    padding: 0.75rem 2rem;
+    border: 2px solid #5c2c0c;
+    color: #5c2c0c;
+    border-radius: 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+    width: 200px;
+}
+
+.mobile-login-button:hover {
+    background: linear-gradient(135deg, var(--color-beige-light), var(--color-beige));
+    color: #5c2c0c;
+}
+
+/* Mobile menu improvements */
+#mobile-menu {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#mobile-menu:not(.translate-y-full) {
+    opacity: 1;
+}
+
+/* Ensure dropdown appears above other content */
+.relative.group {
+    z-index: 50;
+}
+
+/* Smooth dropdown animation */
+.absolute.group-hover\:opacity-100 {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Mobile menu link spacing improvements */
+.menu-link {
+    padding: 0.5rem 0;
+}
+
+/* Modern compact heading containers */
+.modern-heading {
+    padding: 2rem 3rem !important;
+    border-radius: 1.5rem !important;
+    margin-bottom: 3rem !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(128, 0, 32, 0.15) !important;
+    box-shadow: 0 8px 32px rgba(128, 0, 32, 0.1) !important;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(245,240,230,0.8) 100%) !important;
+}
+
+.modern-heading h2 {
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.modern-heading p {
+    font-size: 1.1rem !important;
+    max-width: 600px !important;
+}
+
+/* --- ENHANCED MORPH EFFECTS WITH SLOWER TIMING --- */
+
+/* Base morph effect */
+.morph-interact {
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translateY(0) scale(1);
+    border-radius: 1rem;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+}
+
+.morph-interact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(128, 0, 32, 0.1) 0%, rgba(0, 0, 0, 0) 50%, rgba(128, 0, 32, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+    pointer-events: none;
+}
+
+.morph-interact:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(128, 0, 32, 0.15);
+}
+
+.morph-interact:hover::before {
+    opacity: 1;
+}
+
+/* Section morph containers */
+.morph-section {
+    transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translateY(0) scale(1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(25px);
+}
+
+.morph-section:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(128, 0, 32, 0.1);
+}
+
+/* Scroll-triggered morph effects - SLOWER */
+.morph-scroll {
+    opacity: 0;
+    transform: translateY(60px) scale(0.92);
+    transition: all 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.morph-scroll.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.morph-scroll:nth-child(even) {
+    transition-delay: 0.2s;
+}
+
+.morph-scroll:nth-child(odd) {
+    transition-delay: 0.4s;
+}
+
+/* Staggered animation for grid items - SLOWER */
+.morph-stagger > * {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.morph-stagger.visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.morph-stagger.visible > *:nth-child(1) { transition-delay: 0.3s; }
+.morph-stagger.visible > *:nth-child(2) { transition-delay: 0.6s; }
+.morph-stagger.visible > *:nth-child(3) { transition-delay: 0.9s; }
+.morph-stagger.visible > *:nth-child(4) { transition-delay: 1.2s; }
+
+/* Enhanced hover rotations */
+.hover\\:rotate-1:hover {
+    transform: translateY(-8px) scale(1.03) rotate(1deg);
+}
+
+.hover\\:-rotate-1:hover {
+    transform: translateY(-8px) scale(1.03) rotate(-1deg);
+}
+
+.hover\\:rotate-2:hover {
+    transform: translateY(-8px) scale(1.03) rotate(2deg);
+}
+
+.hover\\:-rotate-2:hover {
+    transform: translateY(-8px) scale(1.03) rotate(-2deg);
+}
+
+.hover\\:rotate-3:hover {
+    transform: translateY(-8px) scale(1.03) rotate(3deg);
+}
+
+/* Scale effects */
+.hover\\:scale-105:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+.hover\\:scale-110:hover {
+    transform: translateY(-8px) scale(1.1);
+}
+
+/* --- SCROLLBAR HIDE --- */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Custom colors */
+.text-maroon {
+    color: var(--color-maroon);
+}
+
+.text-maroon-light {
+    color: var(--color-maroon-light);
+}
+
+.bg-beige-dark {
+    background-color: var(--color-beige-dark);
+}
+
+.bg-beige {
+    background-color: var(--color-beige);
+}
+
+.bg-beige-light {
+    background-color: var(--color-beige-light);
+}
+
+.border-maroon {
+    border-color: var(--color-maroon);
+}
+
+.border-maroon-light {
+    border-color: var(--color-maroon-light);
+}
+
+/* Smooth gradient transitions between sections */
+.gradient-section {
+    background: linear-gradient(to bottom, var(--color-white) 0%, var(--color-beige-light) 100%);
+}
+
+.gradient-section-reverse {
+    background: linear-gradient(to bottom, var(--color-beige-light) 0%, var(--color-white) 100%);
+}
+
+/* Heritage pattern */
+.heritage-pattern {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4c8b8'/><path d='M50,20 L80,50 L50,80 L20,50 Z' fill='%23800020")
+}
+
+/* Chatbot Styles - Fixed Z-index and Scrolling */
+#chatbot-container {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    z-index: 9999 !important;
+}
+
+#chatbot-container.show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    z-index: 9999 !important;
+}
+
+/* Ensure chatbot appears above everything */
+.fixed.z-\[9999\] {
+    z-index: 9999 !important;
+}
+
+/* Fix scrolling in chat messages */
+#chat-messages {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-maroon-light) var(--color-beige-light);
+}
+
+/* Custom scrollbar for webkit browsers */
+#chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chat-messages::-webkit-scrollbar-track {
+    background: var(--color-beige-light);
+    border-radius: 3px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+    background: var(--color-maroon-light);
+    border-radius: 3px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--color-maroon);
+}
+
+/* Make sure input is always visible */
+#chat-input {
+    background: white !important;
+    color: #1a202c !important;
+    border: 1px solid var(--color-beige-dark) !important;
+}
+
+#chat-input:focus {
+    background: white !important;
+    border-color: var(--color-maroon) !important;
+    box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.1) !important;
+    outline: none;
+}
+
+/* Bubble pulse animation - Maroon */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.6), 0 8px 32px rgba(128, 0, 32, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(128, 0, 32, 0.2), 0 12px 40px rgba(128, 0, 32, 0.5);
+    }
+}
+
+.chatbot-pulse {
+    animation: pulse-glow 2s infinite;
+}
+
+.chatbot-icon {
+    fill: #800020 !important;
+    color: #800020 !important;
+}
+
+/* Ensure all chatbot elements have high z-index */
+#chatbot-bubble {
+    z-index: 9999 !important;
+}
+
+#chatbot-container > div {
+    z-index: 9999 !important;
+}
+
+/* --- Footer Styles - COPIED FROM CODE 1 --- */
+.footer { background: white; padding: 3rem 5rem; margin-top: -1px; }
+        /* UPDATED GRID ORDER: Brand/Contact (1.5fr), Hours/Map (1fr), Navigation (1fr) */
+        .footer-content { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; max-width: 1280px; margin: 0 auto 2rem auto; } 
+
+        /* Brand & Contact Column Styling */
+        .footer-brand { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 1.5rem; 
+        } 
+        .footer-logo-group { 
+            display: flex; 
+            flex-direction: column; 
+            margin-bottom: 0; 
+        }
+        .footer-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+        .footer-logo img { width: 40px; height: 40px; object-fit: contain; border-radius: 50%; }
+        .footer-brand h3 { font-size: 1.5rem; color: #2c2c2c; }
+        .footer-brand p { color: #757575; line-height: 1.6; font-size: 1rem; margin-bottom: 1rem; }
+        
+        /* Contact/Hours Block (Left side of sub-grid) */
+        .contact-details-left { 
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        .contact-group { margin-bottom: 0.75rem; }
+        .contact-group h4 { font-size: 1rem; font-weight: 600; color: #2c2c2c; margin-bottom: 0.25rem; }
+        .contact-group p, .contact-group a { font-size: 1rem; color: #757575; line-height: 1.5; text-decoration: none; display: block; }
+        
+        /* Map Block (Right side of sub-grid) */
+        .map-block { display: none; } /* Kept from Code 1 as it doesn't use the map container/hours table */
+
+        /* Social Icons */
+        .social-icons { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+
+        .social-icon { width: 40px; height: 40px; border-radius: 6px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
+        .social-icon:hover { background: #997e62; transform: translateY(-3px); }
+        .social-icon:hover svg { fill: white; }
+        .social-icon svg { fill: #828282; } /* Added Code 1's SVG fill color for consistency */
+
+        /* Navigation Links Columns */
+        .footer-links h4 { font-size: 1rem; margin-bottom: 1rem; color: #2c2c2c; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a { color: #757575; text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: #997e62; }
+
+        /* Hours Table Styles */
+        .hours-table { width: 100%; border-collapse: collapse; margin-top: 0.25rem; }
+        .hours-table td { padding: 1px 0; font-size: 0.95rem; color: #757575; text-align: left; }
+        .hours-table td:first-child { font-weight: 500; width: 50%; }
+
+        /* Map Container (Adjusted for Code 1's map container placement logic) */
+        .map-container { position: relative; width: 100%; padding-top: 50%; height: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-top: 1rem; }
+        .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+
+        .footer-bottom { border-top: 1px solid #e6e6e6; padding-top: 2rem; text-align: center; color: #757575; font-size: 0.9rem; }
+
+        /* --- Media Queries (COPIED FROM CODE 1) --- */
+        @media (max-width: 1200px) {
+            .navbar, .footer { padding: 0 2rem; }
+            .nav-links { gap: 1rem; }
+            /* Footer columns change at 992px in Code 1 */
+        }
+        @media (max-width: 992px) {
+            .footer-content { 
+                /* Ensures Brand/Hours/Nav still flow logically when columns collapse */
+                grid-template-columns: 1fr 1fr; 
+            }
+            .footer-brand { 
+                grid-column: 1 / span 2; /* Full width for brand/contact on tablet */
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar { padding: 0 1rem; }
+            .nav-links { display: none; } 
+            .footer-content { grid-template-columns: 1fr; gap: 3rem; }
+            .footer { padding: 2rem; }
+        }
+
+        /* Quick fix - add padding to footer */
+        .footer {
+            font-family: var(--font-sans) !important;
+            padding-bottom: 100px !important;
+        }
+
+        .footer * {
+            font-family: inherit !important;
+        }
+
+/* Event Cards Styles */
+.event-register-btn {
+    display: inline-flex;
+    align-items: center;
+    background: var(--color-maroon);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.3);
+}
+
+.event-register-btn:hover {
+    background: var(--color-maroon-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+    color: white;
+}
+
+/* Horizontal scroll improvements */
+#events-container {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Add some padding to first and last cards for better scroll experience */
+#events-container > div:first-child {
+    margin-left: 1rem;
+}
+
+#events-container > div:last-child {
+    margin-right: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .morph-interact {
+        width: 85vw !important;
+        height: 28rem !important;
+    }
+}

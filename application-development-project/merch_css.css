@@ -1,0 +1,142 @@
+/* 
+ * MERCHANDISE PAGE STYLES
+ * Additional styles for the merchandise page
+ */
+
+/* Category Carousel Styles */
+.category-carousel {
+    perspective: 1000px;
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.category-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.category-card {
+    position: absolute;
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    background: white;
+    width: 280px;
+}
+
+.category-card.active {
+    z-index: 10;
+    transform: scale(1.3) translateY(0);
+    opacity: 1;
+}
+
+.category-card.left {
+    transform: scale(0.9) translateX(-90%) rotateY(15deg);
+    opacity: 0.8;
+    z-index: 5;
+}
+
+.category-card.right {
+    transform: scale(0.9) translateX(90%) rotateY(-15deg);
+    opacity: 0.8;
+    z-index: 5;
+}
+
+.category-card.far-left {
+    transform: scale(0.7) translateX(-180%) rotateY(25deg);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.category-card.far-right {
+    transform: scale(0.7) translateX(180%) rotateY(-25deg);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.category-card.hidden {
+    opacity: 0;
+    transform: scale(0.5) translateX(240%);
+    z-index: 0;
+}
+
+.category-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Animation for the carousel */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.category-card.active {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Product Grid Styles */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    background: white;
+}
+
+.product-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(128, 0, 32, 0.15);
+}
+
+.product-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Animation for the carousel */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.category-card.active {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Text color overrides for black text */
+.text-black {
+    color: #000000 !important;
+}
+
+/* Remove container boxes from headings */
+h1, h2, h3, h4 {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Ensure paragraph text is black */
+p {
+    color: #000000 !important;
+}

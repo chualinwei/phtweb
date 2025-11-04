@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Penang Heritage Trust</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Link External Files -->
+    <link rel="stylesheet" href="events_css.css">
+</head>
+
+<body class="min-h-screen transition-all duration-500">
+    
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-maroon/30 shadow-lg transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            
+            <!-- Left: Logo -->
+            <div class="flex items-center space-x-3 flex-shrink-0">
+                <img src="/images/pht logo.jpg" 
+                    alt="PHT Malaysia Logo" 
+                    class="w-10 h-10 object-contain">
+                <span class="text-xl font-serif text-maroon font-black tracking-wide">
+                    PHT Malaysia
+                </span>
+            </div>
+
+            <!-- Center: Navigation Links - PROPERLY CENTERED -->
+            <nav class="hidden lg:flex items-center justify-center absolute left-1/2 transform -translate-x-1/2 space-x-1 text-gray-700">
+                <a href="index.html" class="nav-center-links">Home</a>
+                <a href="events.html" class="nav-center-links active">Events</a>
+                <a href="programs.html" class="nav-center-links">Programs</a>
+                
+                <!-- Support Us Dropdown -->
+                <div class="relative group">
+                    <button class="nav-dropdown-button flex items-center">
+                        Support Us <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-beige-dark/30 transform group-hover:translate-y-0 translate-y-2">
+                        <a href="membership.html" class="dropdown-link">Membership</a>
+                        <a href="Volunteer.html" class="dropdown-link">Volunteer</a>
+                        <a href="donation.html" class="dropdown-link">Donate</a>
+                    </div>
+                </div>
+                
+                <a href="merch.html" class="nav-center-links">Merchandise</a>
+                <a href="resource.html" class="nav-center-links">Resources</a>
+                <a href="AboutUs.html" class="nav-center-links">About Us</a>
+            </nav>
+
+            <!-- Right: Log In Button Only -->
+            <div class="hidden lg:flex items-center flex-shrink-0">
+                <a href="#login" class="nav-login-button">
+                    Log In
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden p-2 text-maroon flex-shrink-0">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white/98 backdrop-blur-xl text-gray-800 z-40 transition-transform duration-500 transform translate-y-full opacity-0 lg:hidden">
+            <div class="flex flex-col items-center pt-24 space-y-4 text-xl">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="events.html" class="mobile-nav-link">Events</a>
+                <a href="programs.html" class="mobile-nav-link">Programs</a>
+                <a href="membership.html" class="mobile-nav-link">Membership</a>
+                <a href="Volunteer.html" class="mobile-nav-link">Volunteer</a>
+                <a href="donation.html" class="mobile-nav-link">Donate</a>
+                <a href="merch.html" class="mobile-nav-link">Merchandise</a>
+                <a href="resource.html" class="nav-center-links">Resources</a>
+                <a href="AboutUs.html" class="mobile-nav-link">About Us</a>
+                <div class="pt-6">
+                    <a href="#login" class="mobile-login-button">
+                        Log In
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-32">
+        <!-- Page Header with Animated Background -->
+        <section class="py-4 bg-gradient-to-r from-beige-light to-beige relative overflow-hidden">
+            <!-- Animated background elements -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="floating-1 absolute top-10 left-10 w-20 h-20 bg-maroon rounded-full blur-xl"></div>
+                <div class="floating-2 absolute top-20 right-20 w-16 h-16 bg-brown rounded-full blur-lg"></div>
+                <div class="floating-3 absolute bottom-10 left-1/4 w-24 h-24 bg-maroon-light rounded-full blur-xl"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="slide-up">
+                    <h1 class="text-4xl md:text-5xl font-serif font-bold text-black mb-4">PHT Events</h1>
+                    <p class="text-xl text-gray-700 max-w-3xl">Join us in celebrating and preserving Penang's rich cultural heritage through our diverse events and activities.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updated Upcoming Events Section -->
+        <section class="py-4" id="upcoming-events">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-12 slide-up">
+                    <h2 class="text-3xl font-serif font-bold text-black">Upcoming Events</h2>
+                    <button id="add-event-btn" class="px-6 py-3 bg-brown text-white rounded-lg font-semibold hover:bg-brown/90 transition-all duration-300 flex items-center hover-lift glow-hover">
+                        <i data-lucide="plus" class="w-5 h-5 mr-2"></i>
+                        Add New Event
+                    </button>
+                </div>
+                
+                <div id="upcoming-events-container">
+                    <!-- Event Card 1 -->
+                    <div class="portrait-card morph-hover">
+                        <div class="event-image-container portrait poster-clickable" 
+                             data-poster="https://pht.org.my/wp-content/uploads/SeberangPerai_story_KhooSalma.jpg"
+                             data-title="Exploring Seberang Perai"
+                             data-date="August 17, 2025">
+                            <img src="https://pht.org.my/wp-content/uploads/SeberangPerai_story_KhooSalma.jpg" 
+                                 alt="George Town Heritage Walk" 
+                                 class="event-poster portrait">
+                            <div class="image-overlay">
+                                <span class="image-caption">Exploring seberang perai</span>
+                            </div>
+                            <div class="event-date pulse-gentle">
+                                <span class="block text-sm">AUG 17</span>
+                                <span class="block text-xs">2025</span>
+                            </div>
+                        </div>
+                        <div class="register-section">
+                            <button class="register-btn">
+                                Register Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Card 2 -->
+                    <div class="portrait-card morph-hover">
+                        <div class="event-image-container portrait poster-clickable"
+                             data-poster="https://pht.org.my/wp-content/uploads/Kee-Mansion-1086x1536.jpg"
+                             data-title="Traditional Mansion Visit"
+                             data-date="August 23, 2025">
+                            <img src="https://pht.org.my/wp-content/uploads/Kee-Mansion-1086x1536.jpg" 
+                                 alt="Traditional Shophouse Conservation Workshop" 
+                                 class="event-poster portrait">
+                            <div class="image-overlay">
+                                <span class="image-caption">Mansion visit</span>
+                            </div>
+                            <div class="event-date pulse-gentle">
+                                <span class="block text-sm">AUG 23</span>
+                                <span class="block text-xs">2025</span>
+                            </div>
+                        </div>
+                        <div class="register-section">
+                            <button class="register-btn">
+                                Register Now
+                            </button>
+                        </div>
+                    </div>
+                </div>    
+                    
+                
+                <!-- Past Events Gallery -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-serif font-bold text-black mb-8 slide-up">Past Events</h3>
+                    <div class="past-events-gallery">
+                        <!-- Past Event 1 -->
+                        <div class="past-event-gallery-item poster-clickable"
+                             data-poster="https://pht.org.my/wp-content/uploads/JonLim_PeranakanArchitecture-768x960.jpg"
+                             data-title="Straits Chinese Exhibition"
+                             data-date="June 15, 2024">
+                            <img src="https://pht.org.my/wp-content/uploads/JonLim_PeranakanArchitecture-768x960.jpg" 
+                                 alt="Straits Chinese Exhibition" 
+                                 class="past-event-gallery-image">
+                        </div>
+                        
+                        <!-- Past Event 2 -->
+                        <div class="past-event-gallery-item poster-clickable"
+                             data-poster="https://pht.org.my/wp-content/uploads/PenangHistoryGallery_Visit_2025-768x960.jpg"
+                             data-title="Architecture Symposium"
+                             data-date="May 22, 2024">
+                            <img src="https://pht.org.my/wp-content/uploads/PenangHistoryGallery_Visit_2025-768x960.jpg" 
+                                 alt="Architecture Symposium" 
+                                 class="past-event-gallery-image">
+                        </div>
+                        
+                        <!-- Past Event 3 -->
+                        <div class="past-event-gallery-item poster-clickable"
+                             data-poster="https://pht.org.my/wp-content/uploads/Ayer-Itam-Reservoir--724x1024.png"
+                             data-title="Photography Walk"
+                             data-date="April 10, 2024">
+                            <img src="https://pht.org.my/wp-content/uploads/Ayer-Itam-Reservoir--724x1024.png" 
+                                 alt="Photography Walk" 
+                                 class="past-event-gallery-image">
+                        </div>
+                        
+                        <!-- Past Event 4 -->
+                        <div class="past-event-gallery-item poster-clickable"
+                             data-poster="https://pht.org.my/wp-content/uploads/Sheikh-Omar-Basheers-Makam-FB-Leaflet-size-1-768x960.png"
+                             data-title="Tile Workshop"
+                             data-date="March 18, 2024">
+                            <img src="https://pht.org.my/wp-content/uploads/Sheikh-Omar-Basheers-Makam-FB-Leaflet-size-1-768x960.png" 
+                                 alt="Tile Workshop" 
+                                 class="past-event-gallery-image">
+                        </div>
+                        
+                        <!-- Past Event 5 -->
+                        <div class="past-event-gallery-item poster-clickable"
+                             data-poster="https://pht.org.my/wp-content/uploads/PHT-Poster-FB-Leaflet-size-768x960.png"
+                             data-title="Food Heritage Tour"
+                             data-date="February 5, 2024">
+                            <img src="https://pht.org.my/wp-content/uploads/PHT-Poster-FB-Leaflet-size-768x960.png" 
+                                 alt="Food Heritage Tour" 
+                                 class="past-event-gallery-image">
+                        </div>
+                        
+                        <!-- Past Event 6 -->
+                        <div class="past-event-gallery-item poster-clickable"
+                             data-poster="https://pht.org.my/wp-content/uploads/LHTA_202501.jpg"
+                             data-title="Cultural Festival"
+                             data-date="January 12, 2024">
+                            <img src="https://pht.org.my/wp-content/uploads/LHTA_202501.jpg" 
+                                 alt="Cultural Festival" 
+                                 class="past-event-gallery-image">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Events Gallery Carousel -->
+                <div class="events-gallery-carousel">
+                    <h3 class="text-2xl font-serif font-bold text-black mb-8 slide-up">Events Gallery</h3>
+                    <div class="carousel-container">
+                        <div class="gallery-carousel">
+                            <!-- Carousel Item 1 -->
+                            <div class="carousel-item poster-clickable"
+                                 data-poster="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                 data-title="George Town Heritage Walk"
+                                 data-date="January 15, 2025">
+                                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Heritage Walk" 
+                                     class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <div class="carousel-event-name">George Town Heritage Walk</div>
+                                    <div class="carousel-event-date">January 15, 2025</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Carousel Item 2 -->
+                            <div class="carousel-item poster-clickable"
+                                 data-poster="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                 data-title="Conservation Workshop"
+                                 data-date="February 5, 2025">
+                                <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Workshop" 
+                                     class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <div class="carousel-event-name">Conservation Workshop</div>
+                                    <div class="carousel-event-date">February 5, 2025</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Carousel Item 3 -->
+                            <div class="carousel-item poster-clickable"
+                                 data-poster="https://images.unsplash.com/photo-1597079554313-7d34db8b1c03?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                 data-title="Cultural Exhibition"
+                                 data-date="March 12, 2025">
+                                <img src="https://images.unsplash.com/photo-1597079554313-7d34db8b1c03?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Exhibition" 
+                                     class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <div class="carousel-event-name">Cultural Exhibition</div>
+                                    <div class="carousel-event-date">March 12, 2025</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Carousel Item 4 -->
+                            <div class="carousel-item poster-clickable"
+                                 data-poster="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                 data-title="Architecture Symposium"
+                                 data-date="November 22, 2024">
+                                <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Symposium" 
+                                     class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <div class="carousel-event-name">Architecture Symposium</div>
+                                    <div class="carousel-event-date">November 22, 2024</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Carousel Item 5 -->
+                            <div class="carousel-item poster-clickable"
+                                 data-poster="https://images.unsplash.com/photo-1571624436279-b272aff752b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                 data-title="Food Heritage Tour"
+                                 data-date="August 20, 2024">
+                                <img src="https://images.unsplash.com/photo-1571624436279-b272aff752b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Food Tour" 
+                                     class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <div class="carousel-event-name">Food Heritage Tour</div>
+                                    <div class="carousel-event-date">August 20, 2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-nav carousel-prev">
+                            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                        </button>
+                        <button class="carousel-nav carousel-next">
+                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Poster Popup Modal -->
+    <div id="poster-popup" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center hidden transition-opacity duration-300">
+        <div class="relative max-w-4xl max-h-[90vh] mx-4">
+            <!-- Close Button -->
+            <button id="close-popup" class="absolute -top-12 right-0 text-white hover:text-beige transition-colors duration-300 z-10">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            
+            <!-- Popup Content -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-2xl">
+                <img id="popup-image" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain">
+                <div class="p-4 bg-white">
+                    <h3 id="popup-title" class="text-xl font-serif font-bold text-brown"></h3>
+                    <p id="popup-date" class="text-gray-600 mt-2"></p>
+                </div>
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <button id="prev-poster" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-beige transition-colors duration-300 bg-black/50 rounded-full p-2">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+            <button id="next-poster" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-beige transition-colors duration-300 bg-black/50 rounded-full p-2">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo-group">
+                        <div class="footer-logo">
+                            <img src="/images/pht logo.jpg" alt="Penang Heritage Trust Logo">
+                            <h3>Penang Heritage Trust</h3>
+                        </div>
+                        <p>Organization offering tours of Penang's heritage buildings & street art, plus cultural workshops.</p>
+                    </div>
+
+                    <div class="contact-details-left">
+                        <div class="contact-group">
+                            <h4>Address</h4>
+                            <p>26, Church St, Georgetown, 10200 George Town, Penang</p>
+                        </div>
+
+                        <div class="contact-group">
+                            <h4>Phone</h4>
+                            <a href="tel:+6042642631">04-264 2631</a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/PenangHeritage/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="#828282">
+                                <path d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.tripadvisor.com/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TripAdvisor">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="#828282">
+                                <path d="M10 0C6.9 0 4.3 1.8 3.1 4.4H0v1.8h1.5C1.2 6.7 1 7.3 1 8c0 2.8 2.2 5 5 5s5-2.2 5-5c0-.7-.2-1.3-.5-1.8h1c-.3.5-.5 1.1-.5 1.8 0 2.8 2.2 5 5 5s5-2.2 5-5c0-.7-.2-1.3-.5-1.8H22V4.4h-3.1C17.7 1.8 15.1 0 12 0h-2zm-4 4.4c1.5 0 2.8.8 3.5 2-.7 1.2-2 2-3.5 2s-2.8-.8-3.5-2c.7-1.2 2-2 3.5-2zm8 0c1.5 0 2.8.8 3.5 2-.7 1.2-2 2-3.5 2s-2.8-.8-3.5-2c.7-1.2 2-2 3.5-2zM6 6.9c.6 0 1.1.5 1.1 1.1S6.6 9.1 6 9.1 4.9 8.6 4.9 8 5.4 6.9 6 6.9zm8 0c.6 0 1.1.5 1.1 1.1s-.5 1.1-1.1 1.1-1.1-.5-1.1-1.1.5-1.1 1.1-1.1z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/penangheritagetrust/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="#828282">
+                                <path d="M10 1.802c2.67 0 2.987.01 4.041.059 2.71.123 3.975 1.409 4.099 4.099.048 1.054.057 1.37.057 4.04 0 2.672-.01 2.988-.057 4.042-.124 2.687-1.387 3.975-4.1 4.099-1.053.048-1.37.058-4.04.058-2.67 0-2.987-.01-4.04-.058-2.717-.124-3.977-1.416-4.1-4.1-.048-1.053-.058-1.37-.058-4.041 0-2.67.01-2.986.058-4.04.124-2.69 1.387-3.977 4.1-4.1 1.054-.048 1.37-.058 4.04-.058zM10 0C7.284 0 6.944.012 5.877.06 2.246.227.228 2.242.06 5.877.01 6.944 0 7.284 0 10s.012 3.057.06 4.123c.167 3.632 2.182 5.65 5.817 5.817 1.067.048 1.407.06 4.123.06s3.057-.012 4.123-.06c3.629-.167 5.652-2.182 5.816-5.817.05-1.066.061-1.407.061-4.123s-.012-3.056-.06-4.122C19.773 2.245 17.755.228 14.123.06 13.057.01 12.716 0 10 0zm0 4.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.338-9.87a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Operating Hours</h4>
+                    <div class="contact-group">
+                        <table class="hours-table">
+                            <tr><td>Mon - Fri</td><td>9:00 am – 5:00 pm</td></tr>
+                            <tr><td>Sat - Sun</td><td>Closed</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="contact-group" style="margin-top: 2rem;">
+                        <h4>Location Map</h4>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://maps.google.com/maps?q=26,Church%20St,Georgetown,10200%20George%20Town,Penang&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Support Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Penang Heritage Trust. All rights reserved. | <a href="#privacy" style="color: #997e62; text-decoration: none;">Privacy Policy</a> | <a href="#terms" style="color: #997e62; text-decoration: none;">Terms of Service</a></p>
+            </div>
+    </footer>
+
+    <script src="events_app.js"></script>
+</body>
+</html>

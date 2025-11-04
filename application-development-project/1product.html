@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage T-Shirt - Penang Heritage Trust</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Link External Files -->
+    <link rel="stylesheet" href="index_style.css">
+    <link rel="stylesheet" href="1product_style.css">
+    <script src="index_app.js" defer></script>
+    <script src="1product_app.js" defer></script>
+</head>
+
+<body class="min-h-screen transition-all duration-500">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-maroon/30 shadow-lg transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            
+            <!-- Left: Logo -->
+            <div class="flex items-center space-x-3 flex-shrink-0">
+                <img src="/images/pht logo.jpg" 
+                    alt="PHT Malaysia Logo" 
+                    class="w-10 h-10 object-contain">
+                <span class="text-xl font-serif text-maroon font-black tracking-wide">
+                    PHT Malaysia
+                </span>
+            </div>
+
+            <!-- Center: Navigation Links - PROPERLY CENTERED -->
+            <nav class="hidden lg:flex items-center justify-center absolute left-1/2 transform -translate-x-1/2 space-x-1 text-gray-700">
+                <a href="index.html" class="nav-center-links">Home</a>
+                <a href="events.html" class="nav-center-links">Events</a>
+                <a href="programs.html" class="nav-center-links">Programs</a>
+                
+                <!-- Support Us Dropdown -->
+                <div class="relative group">
+                    <button class="nav-dropdown-button flex items-center">
+                        Support Us <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-beige-dark/30 transform group-hover:translate-y-0 translate-y-2">
+                        <a href="membership.html" class="dropdown-link">Membership</a>
+                        <a href="Volunteer.html" class="dropdown-link">Volunteer</a>
+                        <a href="donation.html" class="dropdown-link">Donate</a>
+                    </div>
+                </div>
+                
+                <a href="merch.html" class="nav-center-links">Merchandise</a>
+                <a href="resource.html" class="nav-center-links">Resources</a>
+                <a href="AboutUs.html" class="nav-center-links">About Us</a>
+            </nav>
+
+            <!-- Right: Log In Button Only -->
+            <div class="hidden lg:flex items-center flex-shrink-0">
+                <a href="#login" class="nav-login-button">
+                    Log In
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden p-2 text-maroon flex-shrink-0">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white/98 backdrop-blur-xl text-gray-800 z-40 transition-transform duration-500 transform translate-y-full opacity-0 lg:hidden">
+            <div class="flex flex-col items-center pt-24 space-y-4 text-xl">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="events.html" class="mobile-nav-link">Events</a>
+                <a href="programs.html" class="mobile-nav-link">Programs</a>
+                <a href="membership.html" class="mobile-nav-link">Membership</a>
+                <a href="Volunteer.html" class="mobile-nav-link">Volunteer</a>
+                <a href="donation.html" class="mobile-nav-link">Donate</a>
+                <a href="merch.html" class="mobile-nav-link">Merchandise</a>
+                <a href="resource.html" class="nav-center-links">Resources</a>
+                <a href="AboutUs.html" class="mobile-nav-link">About Us</a>
+                <div class="pt-6">
+                    <a href="#login" class="mobile-login-button">
+                        Log In
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white/98 backdrop-blur-xl text-gray-800 z-40 transition-transform duration-500 transform translate-y-full opacity-0 lg:hidden">
+        <div class="flex flex-col items-center pt-24 space-y-4 text-xl">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="index.html#events" class="mobile-nav-link">Events</a>
+            <a href="index.html#programs" class="mobile-nav-link">Programs</a>
+            <a href="index.html#membership" class="mobile-nav-link">Membership</a>
+            <a href="index.html#volunteer" class="mobile-nav-link">Volunteer</a>
+            <a href="index.html#donate" class="mobile-nav-link">Donate</a>
+            <a href="merch.html" class="mobile-nav-link">Merchandise</a>
+            <a href="index.html#about" class="mobile-nav-link">About Us</a>
+            <div class="pt-6">
+                <a href="#login" class="mobile-login-button">
+                    Log In
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="mb-16 pt-16">
+        
+                <!-- Product Detail Section -->
+            <section class="py-12 gradient-section relative overflow-hidden">
+                <div class="absolute inset-0 opacity-5">
+                    <div class="absolute top-1/4 left-1/4 w-60 h-60 bg-maroon rounded-full blur-3xl animate-pulse"></div>
+                    <div class="absolute bottom-1/4 right-1/4 w-48 h-48 bg-maroon-light rounded-full blur-2xl animate-pulse" style="animation-delay: 2s;"></div>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <!-- Product Layout -->
+                    <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                        <!-- Left: Main Image and Thumbnails -->
+                        <div class="lg:col-span-2">
+                            <div class="flex flex-col lg:flex-row gap-6">
+                                <!-- Main Product Image -->
+                                <div class="main-product-image morph-interact rounded-2xl overflow-hidden bg-white flex-1">
+                                    <img id="main-image" 
+                                        src="/images/merch 1.jpeg" 
+                                        alt="Heritage T-Shirt - Front View" 
+                                        class="w-full h-96 object-contain rounded-lg">
+                                </div>
+
+                                <!-- Thumbnail Images -->
+                                <div class="flex lg:flex-col gap-4 order-first lg:order-none">
+                                    <div class="thumbnail-image active" data-image="/images/merch 1.jpeg">
+                                        <img src="/images/merch 1.jpeg" 
+                                            alt="T-Shirt Front View" 
+                                            class="w-20 h-20 lg:w-24 lg:h-24 object-cover rounded-lg cursor-pointer border-2 border-maroon">
+                                    </div>
+                                    <div class="thumbnail-image" data-image="/images/merch 2.jpeg">
+                                        <img src="/images/merch 2.jpeg" 
+                                            alt="T-Shirt Side View" 
+                                            class="w-20 h-20 lg:w-24 lg:h-24 object-cover rounded-lg cursor-pointer border-2 border-gray-300 hover:border-maroon/50">
+                                    </div>
+                                    <div class="thumbnail-image" data-image="/images/merch 4.jpeg">
+                                        <img src="/images/merch 4.jpeg" 
+                                            alt="T-Shirt Back View" 
+                                            class="w-20 h-20 lg:w-24 lg:h-24 object-cover rounded-lg cursor-pointer border-2 border-gray-300 hover:border-maroon/50">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Product Details -->
+                        <div class="lg:col-span-1">
+                            <div class="product-details">
+                                <h1 class="text-4xl font-serif text-maroon mb-4">Tiffin Carrier</h1>
+                                <p class="text-2xl font-semibold text-maroon mb-6">RM 110.00</p>
+                                
+                                <div class="mb-6">
+                                    <p class="text-black leading-relaxed mb-4">
+                                        Tiffin carriers with floral motifs (Size per layer : Dia.14cm x H 6.5cm).
+                                    </p>
+                                    <ul class="text-black list-disc list-inside space-y-2 text-sm">
+                                        <li>100% premium ceramic</li>
+                                        <li>Washable</li>
+                                        <li>Available in multiple colors</li>
+                                        <li>Ethically produced</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Color Selection -->
+                                <div class="mb-8">
+                                    <h3 class="font-semibold text-black mb-3">Select Color</h3>
+                                    <div class="flex gap-3">
+                                        <button class="color-option active w-10 h-10 rounded-full bg-white border-2 border-maroon shadow-sm" data-color="white" data-color-name="White"></button>
+                                        <button class="color-option w-10 h-10 rounded-full bg-maroon border-2 border-gray-300 shadow-sm" data-color="maroon" data-color-name="Maroon"></button>
+                                        <button class="color-option w-10 h-10 rounded-full bg-beige-dark border-2 border-gray-300 shadow-sm" data-color="beige" data-color-name="Beige"></button>
+                                        <button class="color-option w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-300 shadow-sm" data-color="black" data-color-name="Black"></button>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-2">Selected: <span id="selected-color">White</span></p>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="flex gap-4 mb-6">
+                                    <button class="add-to-cart-btn morph-interact flex-1 py-4 bg-maroon text-white rounded-xl font-semibold hover:bg-maroon-light transition-colors duration-300 flex items-center justify-center gap-2">
+                                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                                        Add to Cart
+                                    </button>
+                                    <button class="buy-now-btn morph-interact flex-1 py-4 bg-beige text-maroon border border-maroon rounded-xl font-semibold hover:bg-beige-dark transition-colors duration-300 flex items-center justify-center gap-2">
+                                        <i data-lucide="credit-card" class="w-5 h-5"></i>
+                                        Buy Now
+                                    </button>
+                                </div>
+
+                                <!-- Product Features -->
+                                <div class="border-t border-gray-200 pt-6">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <i data-lucide="truck" class="w-5 h-5 text-maroon"></i>
+                                        <span class="text-black">Free shipping within Malaysia</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <i data-lucide="refresh-cw" class="w-5 h-5 text-maroon"></i>
+                                        <span class="text-black">30-day return policy</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="heart" class="w-5 h-5 text-maroon"></i>
+                                        <span class="text-black">Supports heritage conservation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Similar Products Section -->
+            <section class="py-12 gradient-section-reverse relative overflow-hidden">
+                <div class="absolute inset-0 opacity-5">
+                    <div class="absolute top-10 right-10 w-60 h-60 bg-maroon rounded-full blur-2xl"></div>
+                    <div class="absolute bottom-10 left-10 w-48 h-48 bg-maroon-light rounded-full blur-xl"></div>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <h2 class="text-3xl font-serif text-maroon text-center mb-4">Similar Products</h2>
+                    <p class="text-black text-center mb-12 max-w-2xl mx-auto">
+                        Explore more heritage-inspired items you might like
+                    </p>
+                    
+                    <div class="similar-products-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="similar-products">
+                        <!-- Similar products will be dynamically added here -->
+                    </div>
+                </div>
+            </section>
+    </main>
+
+    <!-- Rest of the file remains the same -->
+    <!-- Chatbot Bubble and Footer -->
+</body>
+</html>
